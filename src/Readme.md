@@ -1,4 +1,115 @@
-# 2 Ejercicio Examen
+
+# PASOS A SEGUIR:
+
+-Primer paso: Una clase Pizzas con todos los parámetros de la pizza, los 
+constructores, y los setters y getters que no he puesto en el ejemplo.
+```
+public class Pizzas {
+
+    private String tipoMasa;
+
+    private boolean relleno;
+
+    private int tamaño;
+    public static final String FINA = "FINA";
+    public static final String PAN = "PAN";
+
+    private final int familiar = 2;
+    private final int mediana = 3;
+    private final int pequeña = 4;
+
+    private boolean salsa;
+
+    private String tipoSalsa;
+
+    public static final String BARBACOA = "BARBACOA";
+    public static final String SOLO_TOMATE = "SOLO_TOMATE";
+    public static final String SIN_GLUTEN = "SIN_GLUTEN";
+
+    private boolean cebolla;
+
+    private boolean sinGluten;
+
+    private boolean extraQueso;
+
+    private boolean piña;
+
+    private boolean champiñones;
+
+    private boolean jamon;
+    public Pizzas(){
+        this.cebolla = true;
+        this.relleno=false;
+        this.salsa = true;
+        this.tipoSalsa=BARBACOA;
+        this.sinGluten = false;
+        this.tamaño = mediana;
+        this.tipoMasa = FINA;
+        this.extraQueso=false;
+        this.piña=false;
+        this.jamon=true;
+        this.champiñones=true;
+
+    }
+
+    public Pizzas(String tipoMasa, boolean relleno, int tamaño, boolean salsa, String tipoSalsa, boolean cebolla, boolean sinGluten, boolean extraQueso, boolean piña, boolean champiñones, boolean jamon) {
+        this.tipoMasa = tipoMasa;
+        this.relleno = relleno;
+        this.tamaño = tamaño;
+        this.salsa = salsa;
+        this.tipoSalsa = tipoSalsa;
+        this.cebolla = cebolla;
+        this.sinGluten = sinGluten;
+        this.extraQueso = extraQueso;
+        this.piña = piña;
+        this.champiñones = champiñones;
+        this.jamon = jamon;
+    }
+
+```
+-Segundo Paso: Creamos una clase BuilderPizzas que construya 
+nuestra hamburguesa deseada con el constructor, el método build y los 
+setter que no he puesto de todos los parámetros:
+
+```
+public class BuilderPizzas {
+    protected Pizzas _pizza;
+
+    public Pizzas build() {
+        return this._pizza;
+    }
+
+    public BuilderPizzas() {
+        _pizza = new Pizzas();
+    }
+
+```
+
+-Último Paso: En la clase main creamos una objeto Pizzas y cambiamos
+los parámetros que queramos de la pizza para luego buildearla y enseñarla.
+```
+public class Main {
+    public static void main(String[] args){
+        Pizzas pizzaSinCebolla = new BuilderPizzas()
+                .setCebolla(false)
+                .build();
+        System.out.println(pizzaSinCebolla.toString());
+
+        Pizzas pizzaSinGluten = new BuilderPizzas()
+                .setSinGluten(true)
+                .setTipoSalsa("SIN_GLUTEN")
+                .build();
+        System.out.println(pizzaSinGluten.toString());
+
+        Pizzas pizzaConPiña = new BuilderPizzas()
+                .setPiña(true)
+                .build();
+        System.out.println(pizzaSinGluten.toString());
+    }
+}
+```
+
+### 2 Ejercicio Examen
 -El builder es un patrón de diseño que permite al 
 constructor de una clase poder cambiar objetos complejos paso a paso por
 ejemplo si tuviéramos una aplicación de una hamburguesería para hacer
