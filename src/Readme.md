@@ -2,7 +2,7 @@
 -El builder es un patrón de diseño que permite al 
 constructor de una clase poder cambiar objetos complejos paso a paso por
 ejemplo si tuviéramos una aplicación de una hamburguesería para hacer
-dfierentes tipos de hamburguesas de forma eficaz podemos usar el builder así:
+diferentes tipos de hamburguesas de forma eficaz podemos usar el builder así:
 
 Una clase Hamburguesas con todos los parámetros, los constructores y los setters
 y getters que no he puesto en el ejemplo.

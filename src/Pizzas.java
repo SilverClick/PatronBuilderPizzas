@@ -5,14 +5,20 @@ public class Pizzas {
     private boolean relleno;
 
     private int tamaño;
+    public static final String FINA = "FINA";
+    public static final String PAN = "PAN";
 
-    private final int familiar = 1;
-    private final int mediana = 2;
-    private final int pequeña = 3;
+    private final int familiar = 2;
+    private final int mediana = 3;
+    private final int pequeña = 4;
 
     private boolean salsa;
 
     private String tipoSalsa;
+
+    public static final String BARBACOA = "BARBACOA";
+    public static final String SOLO_TOMATE = "SOLO_TOMATE";
+    public static final String SIN_GLUTEN = "SIN_GLUTEN";
 
     private boolean cebolla;
 
@@ -25,6 +31,20 @@ public class Pizzas {
     private boolean champiñones;
 
     private boolean jamon;
+    public Pizzas(){
+        this.cebolla = true;
+        this.relleno=false;
+        this.salsa = true;
+        this.tipoSalsa=BARBACOA;
+        this.sinGluten = false;
+        this.tamaño = mediana;
+        this.tipoMasa = FINA;
+        this.extraQueso=false;
+        this.piña=false;
+        this.jamon=true;
+        this.champiñones=true;
+
+    }
     /**
      * Constructor con todoa los parametros
      * @param tipoMasa espesor de la masa
@@ -52,6 +72,94 @@ public class Pizzas {
         this.piña = piña;
         this.champiñones = champiñones;
         this.jamon = jamon;
+    }
+
+    public String getTipoMasa() {
+        return tipoMasa;
+    }
+
+    public void setTipoMasa(String tipoMasa) {
+        this.tipoMasa = tipoMasa;
+    }
+
+    public boolean isChampiñones() {
+        return champiñones;
+    }
+
+    public void setChampiñones(boolean champiñones) {
+        this.champiñones = champiñones;
+    }
+
+    public boolean isJamon() {
+        return jamon;
+    }
+
+    public boolean isPiña() {
+        return piña;
+    }
+
+    public boolean isSinGluten() {
+        return sinGluten;
+    }
+
+    public void setSinGluten(boolean sinGluten) {
+        this.sinGluten = sinGluten;
+    }
+
+    public boolean isRelleno() {
+        return relleno;
+    }
+
+    public void setRelleno(boolean relleno) {
+        this.relleno = relleno;
+    }
+
+    public int getTamaño() {
+        return tamaño;
+    }
+
+    public boolean isSalsa() {
+        return salsa;
+    }
+
+    public void setSalsa(boolean salsa) {
+        this.salsa = salsa;
+    }
+
+    public String getTipoSalsa() {
+        return tipoSalsa;
+    }
+
+    public void setTipoSalsa(String tipoSalsa) {
+        this.tipoSalsa = tipoSalsa;
+    }
+
+    public void setTamaño(int tamaño) {
+        this.tamaño = tamaño;
+    }
+
+    public void setPiña(boolean piña) {
+        this.piña = piña;
+    }
+
+    public void setJamon(boolean jamon) {
+        this.jamon = jamon;
+    }
+
+    public boolean isExtraQueso() {
+        return extraQueso;
+    }
+
+    public void setExtraQueso(boolean extraQueso) {
+        this.extraQueso = extraQueso;
+    }
+
+    public boolean isCebolla() {
+        return cebolla;
+    }
+
+    public void setCebolla(boolean cebolla) {
+        this.cebolla = cebolla;
     }
 
     @Override

@@ -5,5 +5,6 @@ public class Main {
         Pizzas pizzaConPiña=new Pizzas("Normal",false,2,true,"Solo Tomate",true,false,false,true,true,true);
         System.out.println(pizzaConPiña.toString());
         Pizzas pizzaSinGluten=new Pizzas("Normal",false,2,true,"Sin Gluten",false,true,false,false,true,true);
+        System.out.println(pizzaSinGluten.toString());
     }
 }
