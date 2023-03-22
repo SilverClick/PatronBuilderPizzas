@@ -1,10 +1,19 @@
 public class Main {
     public static void main(String[] args){
-        Pizzas pizzaSinCebolla=new Pizzas("Normal",false,2,true,"Solo Tomate",false,false,false,false,true,true);
+        Pizzas pizzaSinCebolla = new BuilderPizzas()
+                .setCebolla(false)
+                .build();
         System.out.println(pizzaSinCebolla.toString());
-        Pizzas pizzaConPiña=new Pizzas("Normal",false,2,true,"Solo Tomate",true,false,false,true,true,true);
-        System.out.println(pizzaConPiña.toString());
-        Pizzas pizzaSinGluten=new Pizzas("Normal",false,2,true,"Sin Gluten",false,true,false,false,true,true);
+
+        Pizzas pizzaSinGluten = new BuilderPizzas()
+                .setSinGluten(true)
+                .setTipoSalsa("SIN_GLUTEN")
+                .build();
+        System.out.println(pizzaSinGluten.toString());
+
+        Pizzas pizzaConPiña = new BuilderPizzas()
+                .setPiña(true)
+                .build();
         System.out.println(pizzaSinGluten.toString());
     }
 }
